@@ -1,0 +1,30 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class = "container jumbotron home">
+<%= form_tag discontinue_sints_path, method: :put do %>
+  <h1 class="title">Possui algum dos sintomas abaixo? Adicione-os em seu perfil!</h1>
+    <div class="row col-12" style="margin-left: 120px">
+
+    <% @sints.each do |sint| %>
+
+        <div class="card col-6">
+          <img class="card-img-top" src=<%= sint.img %> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= sint.nome_sintoma %></h5>
+            <p class="card-text"><%= sint.descricao %></p>
+            <div>
+            <%= check_box_tag "sint_ids[]", sint.id %>
+            <label>Marcar sintoma</label>
+            </div>
+
+          </div>
+        </div>
+        <% end %>
+
+    </div>
+  <%= submit_tag "Adicionar sintomas selecionados", :class => "btn btn-light button2"  %>
+  <button type="button" class="btn btn-light" style="margin-top: 20px"><%= link_to 'Voltar', usuarios_path %></button>
+  <% end %>
+<div>
+
+

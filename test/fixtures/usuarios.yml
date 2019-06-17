@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  id: 
+  senha: MyString
+  altura: 
+  peso: 
+  imc: 
+  exercicios: 
+  medicamento: MyString
+  pressao_media: 
+  problemas_extras: MyString
+
+two:
+  nome: MyString
+  id: 
+  senha: MyString
+  altura: 
+  peso: 
+  imc: 
+  exercicios: 
+  medicamento: MyString
+  pressao_media: 
+  problemas_extras: MyString

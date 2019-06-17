@@ -1,0 +1,36 @@
+<%= form_with(model: sint, local: true) do |form| %>
+  <% if sint.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(sint.errors.count, "error") %> prohibited this sint from being saved:</h2>
+
+      <ul>
+      <% sint.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome_sintoma %>
+    <%= form.text_field :nome_sintoma %>
+  </div>
+
+  <div class="field">
+    <%= form.label :descricao %>
+    <%= form.text_field :descricao %>
+  </div>
+  <%= current_user.id %>
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.hidden_field :user_id, value: current_user.id %>
+  </div>
+  <div class="field">
+  <%= form.label :img %>
+  <%= form.text_field :img %>
+</div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

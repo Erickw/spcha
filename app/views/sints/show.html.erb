@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nome sintoma:</strong>
+  <%= @sint.nome_sintoma %>
+</p>
+
+<p>
+  <strong>Descricao:</strong>
+  <%= @sint.descricao %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @sint.user %>
+</p>
+
+<%= link_to 'Edit', edit_sint_path(@sint) %> |
+<%= link_to 'Back', sints_path %>

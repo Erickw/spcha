@@ -1,0 +1,29 @@
+
+
+
+<div class = "container jumbotron home">
+
+<h1 class="title">Bem vindo ao sistema auxiliar de controle de pressão arterial!</h1>
+
+<% if current_user.altura && current_user.peso && current_user.imc %>
+    <p class="lead title">Você pode visualizar seu sintomas selecionados clicando no botão abaixo</p>
+<% end %>
+<% if !current_user.altura && !current_user.peso && !current_user.imc %>
+    <p class="lead title">Para continuar, você precisa cadastrar seus dados de saúde</p>
+<% end %>
+<div class="container-button">
+<% if !current_user.altura && !current_user.peso && !current_user.imc %>
+    <button type="button" class="btn btn-light"><%= link_to 'Cadastrar dados de saúde', edit_user_registration_path, :class => 'button-text' %></button>
+<% end %>
+<button type="button" class="btn btn-light"><%= link_to 'Visualizar meus sintomas', all_sints_sints_path, :class => 'button-text' %></button>
+</div>
+<p class="lead title">Ou caso prefira, poderá visualizar nossa lista de sintomas</p>
+<div class="container-button">
+<button type="button" class="btn btn-light" style="margin-left: 25px"><%= link_to 'Visualizar sintomas', sints_path, :class => 'button-text' %></button>
+</div>
+<p class="lead title">Ou ainda, editar seus dados de saúde</p>
+<div class="container-button">
+<button type="button" class="btn btn-light" style="margin-left: 15px"><%= link_to 'Editar dados de saúde', 'users/edit', :class => 'button-text' %></button>
+</div>
+<br>
+<div>

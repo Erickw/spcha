@@ -1,0 +1,67 @@
+<%= form_with(model: usuario, local: true) do |form| %>
+  <% if usuario.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(usuario.errors.count, "error") %> prohibited this usuario from being saved:</h2>
+
+      <ul>
+      <% usuario.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div class="field">
+    <%= form.label :id %>
+    <%= form.text_field :id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :senha %>
+    <%= form.text_field :senha %>
+  </div>
+
+  <div class="field">
+    <%= form.label :altura %>
+    <%= form.text_field :altura %>
+  </div>
+
+  <div class="field">
+    <%= form.label :peso %>
+    <%= form.text_field :peso %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imc %>
+    <%= form.text_field :imc %>
+  </div>
+
+  <div class="field">
+    <%= form.label :exercicios %>
+    <%= form.text_field :exercicios %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medicamento %>
+    <%= form.text_field :medicamento %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pressao_media %>
+    <%= form.text_field :pressao_media %>
+  </div>
+
+  <div class="field">
+    <%= form.label :problemas_extras %>
+    <%= form.text_field :problemas_extras %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

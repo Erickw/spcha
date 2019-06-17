@@ -1,0 +1,29 @@
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class = "container jumbotron home">
+<%= form_tag discontinue_sints_path, method: :put do %>
+  <div class="alert alert-danger" style = "text-align: center; font-weight: bold" role="alert">
+    Cuidado, você possui mais de 3 sintomas de hipertensão. Procure um medico o quanto antes!
+  </div>
+  <h1 class="title">Seus sintomas aparecem aqui, cuidado ao possuir mais de 2!</h1>
+    <div class="row col-12" style="margin-left: 120px">
+
+    <% @sints.each do |sint| %>
+      <% if sint.user.id == current_user.id && sint.selected%>
+        <div class="card col-6">
+          <img class="card-img-top" src=<%= sint.img %> alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= sint.nome_sintoma %></h5>
+            <p class="card-text"><%= sint.descricao %></p>
+            <div>
+            </div>
+
+          </div>
+        </div>
+        <% end %>
+        <% end %>
+
+    </div>
+  <button type="button" class="btn btn-light" style="margin-top: 20px; margin-left: 500px;"><%= link_to 'Voltar', usuarios_path %></button>
+  <% end %>
+<div>
