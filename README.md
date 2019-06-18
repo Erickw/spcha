@@ -1,24 +1,35 @@
-# README
+# Getting Started
+## Requirements
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Before running the application, make sure you have these dependencies in your environment:
 
-Things you may want to cover:
+* Ruby (2.6.1)
+* Rails (4.2.1 or greater)
+* MySQL
+* Git (1.8 or greater)
 
-* Ruby version
+## Running the project
 
-* System dependencies
+1. Clone the project repository:
 
-* Configuration
+        https://github.com/Erickw/spcha.git
 
-* Database creation
+2. Bundle the dependencies. In the app folder:
 
-* Database initialization
+        bundle install
+        
+3. Change the following `.database.yml` file variables related to your database (You need to have the same db in MySQL):
 
-* How to run the test suite
+        DATABASE_HOST=<db_host>
+        DATABASE_USERNAME=<db_username>
+        DATABASE_PASSWORD=<db_password>
+        DATABASE_NAME=<db_name>
+        
+4. Run rake `rake db:create` and after `rake db:migrate` to generate the database on project.
 
-* Services (job queues, cache servers, search engines, etc.)
+5. To start the server:
 
-* Deployment instructions
-
-* ...
+        rails s
+        
+        
+Great! The project should be running on http://localhost:3000/usuarios
