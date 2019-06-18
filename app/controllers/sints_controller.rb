@@ -1,5 +1,6 @@
 class SintsController < ApplicationController
   before_action :set_sint, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /sints
   # GET /sints.json

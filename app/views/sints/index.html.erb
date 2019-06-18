@@ -1,6 +1,11 @@
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
 
 <div class = "container jumbotron home">
+<div class ="logout-area">
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-light" %>
+  <% end %>
+</div>
 <%= form_tag discontinue_sints_path, method: :put do %>
   <h1 class="title">Possui algum dos sintomas abaixo? Adicione-os em seu perfil!</h1>
     <div class="row col-12" style="margin-left: 120px">

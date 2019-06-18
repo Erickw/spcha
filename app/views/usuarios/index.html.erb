@@ -1,7 +1,10 @@
 
-
-
 <div class = "container jumbotron home">
+<div class ="logout-area">
+  <% if user_signed_in? %>
+    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "btn btn-light" %>
+  <% end %>
+</div>
 
 <h1 class="title">Bem vindo ao sistema auxiliar de controle de pressão arterial!</h1>
 
